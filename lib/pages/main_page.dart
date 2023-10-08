@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myfirstappflutter/pages/card_page.dart';
 import 'package:myfirstappflutter/pages/image_assets.dart';
 import 'package:myfirstappflutter/pages/list_view_h.dart';
-import 'package:myfirstappflutter/pages/tarefa/tarefa_page.dart';
+import 'package:myfirstappflutter/pages/tarefa/tarefa_sqlite_page.dart';
 import 'package:myfirstappflutter/shared/widgets/custom_drawer.dart';
 
 class MainPage extends StatefulWidget {
@@ -37,7 +37,7 @@ class _MainPageState extends State<MainPage> {
                   CardPage(),
                   ImageAssetsPage(),
                   ListViewHPage(),
-                  TarefaPage()
+                  TarefaSQLitePage()
                 ],
               ),
             ),
