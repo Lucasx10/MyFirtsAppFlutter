@@ -3,6 +3,7 @@ import 'package:myfirstappflutter/pages/card_page.dart';
 import 'package:myfirstappflutter/pages/image_assets.dart';
 import 'package:myfirstappflutter/pages/list_view_h.dart';
 import 'package:myfirstappflutter/pages/tarefa/tarefa_sqlite_page.dart';
+import 'package:myfirstappflutter/pages/consulta_cep.dart';
 import 'package:myfirstappflutter/shared/widgets/custom_drawer.dart';
 
 class MainPage extends StatefulWidget {
@@ -34,6 +35,7 @@ class _MainPageState extends State<MainPage> {
                   });
                 },
                 children: const [
+                  ConsultaCEP(),
                   CardPage(),
                   ImageAssetsPage(),
                   ListViewHPage(),
@@ -48,6 +50,8 @@ class _MainPageState extends State<MainPage> {
                 },
                 currentIndex: posicaoPagina,
                 items: const [
+                  BottomNavigationBarItem(
+                      label: "HTTP", icon: Icon(Icons.get_app_rounded)),
                   BottomNavigationBarItem(
                       label: "Home", icon: Icon(Icons.home)),
                   BottomNavigationBarItem(

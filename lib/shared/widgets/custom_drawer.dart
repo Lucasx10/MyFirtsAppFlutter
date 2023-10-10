@@ -3,6 +3,7 @@ import 'package:myfirstappflutter/pages/configuracoes/configuracoes_hive_page.da
 import 'package:myfirstappflutter/pages/dados_cadastrais/dados_cadastrais_shared_preferences.dart';
 import 'package:myfirstappflutter/pages/login_page.dart';
 import 'package:myfirstappflutter/pages/numeros_aleatorios/numero_aleatorio_hive.dart';
+import 'package:myfirstappflutter/pages/post_page.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -87,6 +88,29 @@ class CustomDrawer extends StatelessWidget {
           onTap: () {
             Navigator.push(context, MaterialPageRoute(builder: (bc) => 
             const NumeroAleatorioHivePage()
+            ));
+          },
+        ),
+        const Divider(),
+        const SizedBox(
+          height: 10,
+        ),
+        InkWell(
+          child: Container(
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+              width: double.infinity,
+              child: const Row(
+                children: [
+                  Icon(Icons.post_add),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text("Posts"),
+                ],
+              )),
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (bc) => 
+            const PostPage()
             ));
           },
         ),
