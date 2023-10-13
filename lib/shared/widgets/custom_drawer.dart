@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:myfirstappflutter/pages/characters/characters_page.dart';
 import 'package:myfirstappflutter/pages/configuracoes/configuracoes_hive_page.dart';
 import 'package:myfirstappflutter/pages/dados_cadastrais/dados_cadastrais_shared_preferences.dart';
 import 'package:myfirstappflutter/pages/login_page.dart';
 import 'package:myfirstappflutter/pages/numeros_aleatorios/numero_aleatorio_hive.dart';
 import 'package:myfirstappflutter/pages/post_page.dart';
+import 'package:myfirstappflutter/pages/tarefa/tarefa_http_page.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -46,7 +48,6 @@ class CustomDrawer extends StatelessWidget {
               accountName: Text("Lucas Prado"),
               accountEmail: Text("email@example.com")),
         ),
-        
         InkWell(
           child: Container(
               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
@@ -65,7 +66,8 @@ class CustomDrawer extends StatelessWidget {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => const DadosCadastraisSharedPreferencesPage()));
+                    builder: (context) =>
+                        const DadosCadastraisSharedPreferencesPage()));
           },
         ),
         const Divider(),
@@ -86,9 +88,33 @@ class CustomDrawer extends StatelessWidget {
                 ],
               )),
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (bc) => 
-            const NumeroAleatorioHivePage()
-            ));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (bc) => const NumeroAleatorioHivePage()));
+          },
+        ),
+        const Divider(),
+        const SizedBox(
+          height: 10,
+        ),
+        InkWell(
+          child: Container(
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+              width: double.infinity,
+              child: const Row(
+                children: [
+                  Icon(Icons.local_fire_department_outlined),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text("Herois"),
+                ],
+              )),
+          onTap: () async {
+            Navigator.pop(context);
+            Navigator.push(context,
+                MaterialPageRoute(builder: (bc) => const CharactersPage()));
           },
         ),
         const Divider(),
@@ -109,9 +135,33 @@ class CustomDrawer extends StatelessWidget {
                 ],
               )),
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (bc) => 
-            const PostPage()
-            ));
+            Navigator.push(
+                context, MaterialPageRoute(builder: (bc) => const PostPage()));
+          },
+        ),
+        const Divider(),
+        const SizedBox(
+          height: 10,
+        ),
+        InkWell(
+          child: Container(
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+              width: double.infinity,
+              child: const Row(
+                children: [
+                  Icon(Icons.settings),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text("Tarefas HTTP"),
+                ],
+              )),
+          onTap: () async {
+            Navigator.pop(context);
+            Navigator.push(
+               context,
+               MaterialPageRoute(
+                   builder: (bc) => const TarefaHttpPage()));
           },
         ),
         const Divider(),
@@ -132,9 +182,10 @@ class CustomDrawer extends StatelessWidget {
                 ],
               )),
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (bc) => 
-            const ConfiguracoesHivePage()
-            ));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (bc) => const ConfiguracoesHivePage()));
           },
         ),
         const Divider(),

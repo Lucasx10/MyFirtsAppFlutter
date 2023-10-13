@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hive/hive.dart';
 import 'package:myfirstappflutter/model/dados_cadastrais_model.dart';
 import 'package:myfirstappflutter/model/tarefa_hive_model.dart';
@@ -13,5 +14,6 @@ void main() async {
   Hive.init(documentsDirectory.path);
   Hive.registerAdapter(DadosCadastraisModelAdapter());
   Hive.registerAdapter(TarefaModelAdapter());
+  await dotenv.load(fileName: ".env");
   runApp(const MyApp());
 }
